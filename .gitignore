@@ -3,3 +3,8 @@ node_modules
 dist
 dist-ssr
 *.local
+# idea
+.idea
+
+#locks
+./*[.-]lock.json
