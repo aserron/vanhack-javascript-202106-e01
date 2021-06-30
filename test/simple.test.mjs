@@ -1,28 +1,14 @@
-;
-const balanced = string => {
+import balanced from "../src/ex01.mjs";
 
-    if(string.length===1) return true
-    if(string.length===2) return true
+import chai from "chai";
 
-    console.log(string,string[0]===string[2])
-    if(string.length===3) return (
-        (string[0]!==string[1]) && (string[1]!==string[2])
-    )
-
-
-
-
-
-};
+import fs from "fs";
 
 ;(function() {
-    const chai = require("chai");
     const assert = chai.assert;
     chai.config.truncateThreshold = 0;
-
-    const fs = require ("fs");
-    let res = fs.readFileSync('./test.js', 'utf8')
-    console.log(res)
+    // let res = fs.readFileSync('./test.js', 'utf8')
+    // console.log(res)
 
 // babel.config.js
 // jest.config.js

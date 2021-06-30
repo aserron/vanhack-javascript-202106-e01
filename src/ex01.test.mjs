@@ -4,7 +4,6 @@ import balanced from "./ex01.mjs";
 const assert = chai.assert;
 chai.config.truncateThreshold = 0;
 
-
 describe("Example Test Cases", () => {
     it("should work on provided examples", () => {
         assert.isTrue(balanced("a"), `Test failed for "a"`);
@@ -74,7 +73,7 @@ describe("Advanced Test Cases", () => {
 
     it("should work on long strings", () => {
         let test = new Array(500000)
-            .fill().map((e, i) => "abcde"[i%5]).join``
+            .fill().map((e, i) => "abcde"[i % 5]).join``
         ;
 
         if (!balanced(test)) {
@@ -82,7 +81,7 @@ describe("Advanced Test Cases", () => {
         }
 
         test = new Array(499999)
-            .fill().map((e, i) => "abcde"[i%5]).join``
+            .fill().map((e, i) => "abcde"[i % 5]).join``
         ;
 
         if (balanced(test)) {
@@ -93,7 +92,7 @@ describe("Advanced Test Cases", () => {
     it("should handle edge cases", () => {
         // No more character to use
         assert.isFalse(
-                balanced("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ*"),
+            balanced("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ*"),
             `Test failed for "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ*"`
         );
 
@@ -160,7 +159,7 @@ describe("Advanced Test Cases", () => {
         }
     });
 
-    const rand = (n=26) => ~~(Math.random() * n);
+    const rand = (n = 26) => ~~(Math.random() * n);
     const generateRandomString = n =>
         new Array(rand() + n)
             .fill()
@@ -169,6 +168,11 @@ describe("Advanced Test Cases", () => {
     ;
 });
 
+/**
+ * Reference balanced function used for bulk random comparisons.
+ * @param string
+ * @return {boolean}
+ */
 const balancedRef = string => {
     let counts = string.split``
         .reduce((a, e) => {
@@ -178,8 +182,7 @@ const balancedRef = string => {
 
             a[e]++;
             return a;
-        }, {})
-    ;
+        }, {});
 
     if ("*" in counts) {
         let wildcards = counts["*"];
@@ -215,12 +218,10 @@ const balancedRef = string => {
 
             return false;
         }
-    }
-    else {
+    } else {
         counts = Object.values(counts);
     }
 
     return !counts.length ||
-        counts.every(e => e === counts[0])
-        ;
+            counts.every(e => e === counts[0]);
 }

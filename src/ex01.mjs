@@ -1,6 +1,6 @@
 const balanced = string => {
 
-    console.log()
+    // console.log()
 
     /**
      * Test if I can create sets of new chars
@@ -142,7 +142,7 @@ const balanced = string => {
 
         increaseWholeTimes++;
 
-        console.log(`increaseWholeTimes ${increaseWholeTimes} n=${arranged.length}`,div)
+        // console.log(`increaseWholeTimes ${increaseWholeTimes} n=${arranged.length}`,div)
 
         lastCount = lastCount + 1;
         wildcards = wildcards - (ARRANGED_COUNT);
@@ -174,7 +174,7 @@ const balanced = string => {
 };
 
 // let str = 'abd*xdx*yba*'
-let str = "*EC**L***DPO*X*"
-console.log(str,' true=',balanced(str))
+// let str = "*EC**L***DPO*X*"
+// console.log(str,' true=',balanced(str))
 
 export default balanced;
